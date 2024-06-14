@@ -21,14 +21,15 @@ public class paper {
         System.out.print("k 입력: ");
         int k = sc.nextInt();
 
-        System.out.println(solution(papers, k));
+        System.out.println("종이를 받은 사람의 수: " + solution(papers, k) + "명");
     }
 
     public static int solution(int[] papers, int k){
         int people = 0;
         for (int i = 0; i < papers.length; i++) {
             k -= papers[i];
-            // 맨 앞사람에게 전달한 종이 수에서 각자 필요로 하는 종이 수만큼 빼고
+            // 맨 앞사람에게 전달한 종이 수(남은 종이의 수)에서
+            // 각자 필요로 하는 종이 수만큼 빼고
             people++;
             // 종이 받은 사람들을 카운트함
             if(k < papers[i]){
